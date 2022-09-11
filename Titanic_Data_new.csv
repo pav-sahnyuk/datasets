@@ -1,0 +1,20 @@
+Survived;Passenger Class;Name;Sex;Age;No of Siblings or Spouses on Board;No of Parents or Children on Board;Ticket Number;Passenger Fare;Cabin;Port of Embarkation;Life Boat
+Yes;First;Allen, Miss. Elisabeth Walton;Female;29;0;1;24160;211,3375;B5;Southampton;2
+Yes;First;Allison, Master. Hudson Trevor;Male;12;1;1;113781;151,55;C22 C26;Southampton;11
+No;First;Allison, Miss. Helen Loraine;Female;22;1;1;113781;151,55;C22 C26;Southampton;
+No;Second;Allison, Mr. Hudson Joshua Creighton;Male;30;1;1;113781;151,55;C22 C26;Southampton;
+No;Second;Allison, Mrs. Hudson J C (Bessie Waldo Daniels);Female;28;0;2;113781;151,55;C22 C26;Southampton;
+Yes;Second;Anderson, Mr. Harry;Male;28;0;2;19952;26,55;E12;Southampton;3
+Yes;Second;Andrews, Miss. Kornelia Theodosia;Female;28;1;2;13502;77,9583;D7;Southampton;10
+No;First;Andrews, Mr. Thomas Jr;Male;28;2;2;112050;0;A36;Southampton;
+Yes;First;Appleton, Mrs. Edward Dale (Charlotte Lamson);Female;28;2;2;11769;51,4792;C101;Southampton;D
+No;First;Artagaveytia, Mr. Ramon;Male;28;0;2;PC 17609;49,5042;;Cherbourg;
+No;First;Astor, Col. John Jacob;Male;28;2;0;PC 17757;227,525;C62 C64;Cherbourg;
+Yes;First;Astor, Mrs. John Jacob (Madeleine Talmadge Force);Female;28;1;0;PC 17757;227,525;C62 C64;Cherbourg;4
+Yes;Third;Aubart, Mme. Leontine Pauline;Female;28;1;0;PC 17477;69,3;B35;Cherbourg;9
+Yes;Third;"Barber, Miss. Ellen ""Nellie""";Female;28;1;0;19877;78,85;;Southampton;6
+Yes;Third;Barkworth, Mr. Algernon Henry Wilson;Male;28;1;1;27042;30;A23;Southampton;B
+No;Third;Baumann, Mr. John D;Male;28;1;1;PC 17318;25,925;;Southampton;
+No;First;Baxter, Mr. Quigg Edmond;Male;28;1;1;PC 17558;247,5208;B58 B60;Cherbourg;
+Yes;First;Baxter, Mrs. James (Helene DeLaudeniere Chaput);Female;28;1;1;PC 17558;247,5208;B58 B60;Cherbourg;6
+Yes;First;Bazzani, Miss. Albina;Female;28;1;1;11813;76,2917;D15;Cherbourg;8
