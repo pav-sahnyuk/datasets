@@ -1,0 +1,24 @@
+WITH rfm_raw AS (
+      SELECT Customer_ID,Customer_Name,
+             DATE_DIFF(CURRENT_DATE(),MAX(Order_Date), DAY) AS R,
+             COUNT(Order_ID) AS F,
+             Round(Sum(Sales),2) AS M
+      FROM `big-query-exam-283517.Demo.Orders` 
+      GROUP BY Customer_ID,Customer_Name
+      
+     ),
+     calc_rfm AS (
+      SELECT *,
+             NTILE(5) OVER (ORDER BY R DESC) as R_S,
+             NTILE(5) OVER (ORDER BY F ASC) as F_S,
+             NTILE(5) OVER (ORDER BY M ASC) as M_S
+      FROM rfm_raw
+     )
+SELECT *,
+       CASE 
+              WHEN R_S >= 4 AND F_S >= 4 AND M_S  >= 4 THEN 'Champions'
+              WHEN R_S >= 3 AND F_S >= 3 AND M_S >= 3 THEN 'Loyal Customers'
+              ELSE 'Risk'
+        END as rfm_segment
+FROM calc_rfm
+ORDER BY M desc
