@@ -1,0 +1,10 @@
+-- RFM
+SELECT
+  Customer_ID,Customer_Name,
+  COUNT(distinct Order_ID) as frequency,
+  date_diff(MAX(Order_Date), MIN(Order_Date),day) as recency,
+  Round(Sum(Sales),2) as monetary_value,
+  date_diff(CURRENT_DATE, MAX(Order_Date),day) as T
+FROM `big-query-exam-283517.Demo.Orders` 
+GROUP BY Customer_ID,Customer_Name
+ORDER BY monetary_value DESC
