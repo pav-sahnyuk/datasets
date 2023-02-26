@@ -1,0 +1,24 @@
+--ABC
+SELECT
+  k.Customer_ID, k.Customer_Name,
+  k.cumulative_sum_Customer *100/k.total_sales as percent_cumulative_sum,
+  CASE
+    WHEN k.cumulative_sum_Customer*100/k.total_sales  < 50 THEN 'A'
+    WHEN k.cumulative_sum_Customer*100/k.total_sales < 80 THEN 'B'
+  ELSE
+  'C'
+END
+  AS ABC
+FROM
+(
+SELECT DISTINCT m.Customer_ID,m.Customer_Name,m.Sales, 
+SUM(m.Sales) OVER () AS total_sales,
+m.Sales *100/ SUM(m.Sales) OVER () as persent_sales,
+Sum(m.Sales) OVER (ORDER BY m.Sales DESC) as cumulative_sum_Customer
+FROM
+(
+SELECT
+Customer_ID, Customer_Name, Sum(Sales) as Sales,
+FROM `big-query-exam-283517.Demo.Orders` 
+GROUP BY Customer_ID, Customer_Name
+) as m ) as k
