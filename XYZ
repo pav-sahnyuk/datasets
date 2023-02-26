@@ -1,0 +1,26 @@
+--XYZ
+SELECT
+  k.Customer_ID,
+  k.Customer_Name,
+  k.VAR,
+  k.num_Orders,
+  CASE
+    WHEN k.VAR<10 THEN 'X'
+    WHEN k.VAR BETWEEN 10
+  AND 25 THEN 'Y'
+  ELSE
+  'Z'
+END
+  AS XYZ
+  FROM (
+    SELECT
+      DISTINCT Customer_ID,
+      Customer_Name, Count(Order_ID) as num_Orders,
+      Round(SQRT(STDDEV(Quantity))*100/AVG(Quantity),2) AS VAR
+    FROM
+      `big-query-exam-283517.Demo.Orders`
+    GROUP BY
+      Customer_ID,
+      Customer_Name) AS k
+
+ORDER BY XYZ
